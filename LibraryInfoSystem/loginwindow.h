@@ -15,7 +15,21 @@ public:
     LoginWindow(QWidget *parent = nullptr);
     ~LoginWindow();
 
+private slots:
+    void on_loginButton_clicked();
+
+    void on_exitButton_clicked();
+
+    void on_submitButton_clicked();
+
 private:
     Ui::LoginWindow *ui;
+
+    QString uName;
+    QString uPassword;
+
+public:
+    QString getPassword();
+    QString getUseraname();
 };
 #endif // LOGINWINDOW_H

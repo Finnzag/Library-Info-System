@@ -9,15 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    book.cpp \
     main.cpp \
-    loginwindow.cpp
+    loginwindow.cpp \
+    user.cpp
 
 HEADERS += \
-    loginwindow.h
+    book.h \
+    loginwindow.h \
+    user.h
 
 FORMS += \
     createaccountwindow.ui \
-    loginwindow.ui
+    loginwindow.ui \
+    mainmenuwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
