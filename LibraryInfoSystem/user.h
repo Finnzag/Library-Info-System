@@ -2,28 +2,26 @@
 #define USER_H
 
 #include <string>
+#include <QWindow>
 
 class User
 {
 public:
-    User();
+    User(QString username, QString password, bool adminState);
 
 public:
 
-    void setAccountName(std::string name);
-    void setUsername(std::string username);
-    void setPassword(std::string password);
+    void setUsername(QString username);
+    void setPassword(QString password);
     void setIsAdmin(char isAdmin);
 
-    std::string getAccountName();
-    std::string getUsername();
-    std::string getpassword();
-    std::string getIsAdmin();
+    QString getUsername();
+    QString getpassword();
+    QString getIsAdmin();
 
 private:
-    std::string accountName;
-    std::string username;
-    std::string password;
+    QString username;
+    QString password;
     bool isAdmin;
 };
 
