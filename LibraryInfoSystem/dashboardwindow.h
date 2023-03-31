@@ -12,7 +12,7 @@ class DashboardWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit DashboardWindow(QWidget *parent = nullptr);
+    explicit DashboardWindow(bool adminStatus, QWidget *parent = nullptr);
     ~DashboardWindow();
 
 private:
@@ -23,6 +23,11 @@ private:
 
 public:
     void setIsAdminUser(bool adminStatus);
+private slots:
+    void on_MyAccountButton_clicked();
+    void on_EditAccountButton_clicked();
+    void on_pushButton_clicked();
+    void on_saveDetailsButton_clicked();
 };
 
 #endif // DASHBOARDWINDOW_H

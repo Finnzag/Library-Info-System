@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>986</width>
+    <width>1033</width>
     <height>613</height>
    </rect>
   </property>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="EditAccountButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>90</x>
       <y>30</y>
       <width>81</width>
       <height>24</height>
@@ -69,7 +69,7 @@
    <widget class="QPushButton" name="EditCatalogueButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>180</x>
       <y>30</y>
       <width>91</width>
       <height>24</height>
@@ -79,13 +79,160 @@
      <string>Edit Catalogue</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="MyAccountButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>My Account</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="editUserBox">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>150</y>
+      <width>291</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Edit User</string>
+    </property>
+    <widget class="QLineEdit" name="newUsernameEdit">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="newPasswordEdit">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>90</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>10</y>
+       <width>111</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter new username</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>70</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enter new password</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="saveDetailsButton">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>160</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="adminCheckBox">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>130</y>
+       <width>76</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Is Admin ?</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="userToEditBox">
+     <property name="geometry">
+      <rect>
+       <x>-10</x>
+       <y>50</y>
+       <width>321</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Edit User</string>
+     </property>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>         Enter user to edit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>90</y>
+        <width>75</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="UserToEditInput">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>50</y>
+        <width>113</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>986</width>
+     <width>1033</width>
      <height>22</height>
     </rect>
    </property>

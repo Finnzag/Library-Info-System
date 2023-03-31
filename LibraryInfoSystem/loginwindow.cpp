@@ -53,6 +53,7 @@ void LoginWindow::on_exitButton_clicked()
 
 void LoginWindow::on_submitButton_clicked()
 {
+    bool bDoOnce = true;
     //ui->loginDetailsBox->setVisible(false);
     uName = ui->UNInput->text();
     ui->UNInput->clear();
@@ -67,13 +68,23 @@ void LoginWindow::on_submitButton_clicked()
                 QMessageBox::information(this, "Login", "Username and Password are correct");
                 hide();
                 // hide login window and create the dashboard window
-                dashboardWindow = new DashboardWindow(this);
-                dashboardWindow->setIsAdminUser(0);
+                dashboardWindow = new DashboardWindow(ASVec[i], this);
                 dashboardWindow->show();
+                bDoOnce = true;
+            }
+            else{
+                bDoOnce = false;
+                if (bDoOnce == false){
+                    QMessageBox::warning(this, "Login", "Username or Password are incorrect");
+                    bDoOnce = true;
+                }
             }
         }
         else{
-            do std::once_flag QMessageBox::warning(this, "Login", "Username or Password are incorrect");
+            if (bDoOnce == false){
+                QMessageBox::warning(this, "Login", "Username or Password are incorrect");
+                bDoOnce = true;
+            }
         }
     }
 
