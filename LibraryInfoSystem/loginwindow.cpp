@@ -38,10 +38,6 @@ LoginWindow::LoginWindow(QWidget *parent)
             ASVec.push_back(readInAdminState);
         }
     }
-
-    UsernameFile.close();
-    PasswordFile.close();
-    AdminStateFile.close();
 }
 
 LoginWindow::~LoginWindow()
