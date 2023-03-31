@@ -1,17 +1,18 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-class QString;
+#include <string>
 
 class Book
 {
 public:
     Book();
 
-protected:
-    //QString Name;
+private:
+    std::string Name;
     int ID;
-    //QString Genere;
+    std::string Genere;
+    bool isAvaiable;
 
 };
 

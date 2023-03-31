@@ -10,19 +10,22 @@ CONFIG += c++17
 
 SOURCES += \
     book.cpp \
+    dashboardwindow.cpp \
     main.cpp \
     loginwindow.cpp \
     user.cpp
 
 HEADERS += \
     book.h \
+    dashboardwindow.h \
     loginwindow.h \
     user.h
 
 FORMS += \
     createaccountwindow.ui \
+    dashboardwindow.ui \
     loginwindow.ui \
-    mainmenuwindow.ui \
+    mainmenuwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

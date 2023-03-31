@@ -2,6 +2,7 @@
 #define LOGINWINDOW_H
 
 #include <QMainWindow>
+#include "dashboardwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWindow; }
@@ -16,7 +17,6 @@ public:
     ~LoginWindow();
 
 private slots:
-    void on_loginButton_clicked();
 
     void on_exitButton_clicked();
 
@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::LoginWindow *ui;
+    DashboardWindow *dashboardWindow;
 
     QString uName;
     QString uPassword;

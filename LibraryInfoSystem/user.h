@@ -1,8 +1,7 @@
 #ifndef USER_H
 #define USER_H
 
-#include <QMainWindow>
-
+#include <string>
 
 class User
 {
@@ -11,22 +10,21 @@ public:
 
 public:
 
-    void setAccountName(QString name);
-    void setUsername(QString username);
-    void setPassword(QString password);
+    void setAccountName(std::string name);
+    void setUsername(std::string username);
+    void setPassword(std::string password);
     void setIsAdmin(char isAdmin);
 
-    QString getAccountName();
-    QString getUsername();
-    QString getpassword();
-    QString getIsAdmin();
+    std::string getAccountName();
+    std::string getUsername();
+    std::string getpassword();
+    std::string getIsAdmin();
 
 private:
-    QString accountName;
-    QString username;
-    QString password;
+    std::string accountName;
+    std::string username;
+    std::string password;
     bool isAdmin;
-
 };
 
 #endif // USER_H
