@@ -22,7 +22,6 @@ HEADERS += \
     user.h
 
 FORMS += \
-    createaccountwindow.ui \
     dashboardwindow.ui \
     loginwindow.ui \
     mainmenuwindow.ui
