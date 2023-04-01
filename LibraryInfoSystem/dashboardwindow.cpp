@@ -1,18 +1,21 @@
 #include "dashboardwindow.h"
 #include "ui_dashboardwindow.h"
+#include "user.h"
 #include "QDebug"
+#include <QMessageBox>
 #include <fstream>
 
 // Function delcaration
-void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
+//void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
 void loadUserInfo();
 
 // Variables
 QString userToEdit;
 // create a username and password vector
-std::vector<QString> UNVec;
-std::vector<QString> PWVec;
-std::vector<int> ASVec;
+//std::vector<QString> UNVec;
+//std::vector<QString> PWVec;
+//std::vector<int> ASVec;
+std::vector<User> UserVec;
 
 
 DashboardWindow::DashboardWindow(bool adminStatus, QWidget *parent) :
@@ -53,19 +56,34 @@ void DashboardWindow::on_MyAccountButton_clicked()
 
 void DashboardWindow::on_EditAccountButton_clicked()
 {
+    //QMessageBox::information(this, "Test", "Test1");
     ui->userToEditBox->show();
 }
 
-void DashboardWindow::on_pushButton_clicked()
+void DashboardWindow::on_EditButton_clicked()
 {
     userToEdit = ui->UserToEditInput->text();
+
+    for (int i = 0;  i < UserVec.size(); i++) {
+        if (UserVec[i].getUsername() == userToEdit){
+            ui->userToEditBox->hide();
+            ui->editUserBox->show();
+        }
+        else{
+            QMessageBox::warning(this, "Incorrect User", "Please enter an existing username");
+            on_EditAccountButton_clicked();
+            break;
+        }
+    }
+
+
     ui->userToEditBox->hide();
     ui->editUserBox->show();
 }
 
 void DashboardWindow::on_saveDetailsButton_clicked()
 {
-    editUserDetails(userToEdit, ui->newUsernameEdit->text(), ui->newPasswordEdit->text(), ui->adminCheckBox->isChecked());
+    //editUserDetails(userToEdit, ui->newUsernameEdit->text(), ui->newPasswordEdit->text(), ui->adminCheckBox->isChecked());
     ui->newUsernameEdit->clear();
     ui->newPasswordEdit->clear();
     ui->editUserBox->hide();
@@ -86,16 +104,17 @@ void loadUserInfo(){
     // Transfer loaded data from temp variables to the array for each of them
     if (UsernameFile && PasswordFile && AdminStateFile){
         while (UsernameFile >> readInUsername) {
-            UNVec.push_back(QString::fromStdString(readInUsername));
             PasswordFile >> readInpassword;
-            PWVec.push_back(QString::fromStdString(readInpassword));
             AdminStateFile >> readInAdminState;
-            ASVec.push_back(readInAdminState);
+
+            User U(QString::fromStdString(readInUsername), QString::fromStdString(readInUsername), readInAdminState);
+
+            UserVec.push_back(U);
         }
     }
 }
 
-void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState){
-
-}
+//void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState){
+//
+//}
 

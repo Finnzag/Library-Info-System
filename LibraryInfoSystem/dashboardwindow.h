@@ -26,8 +26,8 @@ public:
 private slots:
     void on_MyAccountButton_clicked();
     void on_EditAccountButton_clicked();
-    void on_pushButton_clicked();
     void on_saveDetailsButton_clicked();
+    void on_EditButton_clicked();
 };
 
 #endif // DASHBOARDWINDOW_H

@@ -3,6 +3,7 @@
 #include <fstream>
 #include <QMessageBox>
 #include <qdebug.h>
+#include <vector>
 #include "ui_loginwindow.h"
 
 // create a username and password vector
