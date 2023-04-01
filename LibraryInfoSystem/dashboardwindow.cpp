@@ -8,6 +8,7 @@
 // Function delcaration
 void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
 void loadUserInfo();
+void saveUserInfo();
 
 // Variables
 QString userToEdit;
@@ -53,7 +54,6 @@ void DashboardWindow::on_MyAccountButton_clicked()
 
 void DashboardWindow::on_EditAccountButton_clicked()
 {
-    //QMessageBox::information(this, "Test", "Test1");
     ui->userToEditBox->show();
 }
 
@@ -80,7 +80,7 @@ void DashboardWindow::on_EditButton_clicked()
 
 void DashboardWindow::on_saveDetailsButton_clicked()
 {
-    //editUserDetails(userToEdit, ui->newUsernameEdit->text(), ui->newPasswordEdit->text(), ui->adminCheckBox->isChecked());
+    editUserDetails(userToEdit, ui->newUsernameEdit->text(), ui->newPasswordEdit->text(), ui->adminCheckBox->isChecked());
     ui->newUsernameEdit->clear();
     ui->newPasswordEdit->clear();
     ui->editUserBox->hide();
@@ -112,7 +112,27 @@ void loadUserInfo(){
 }
 
 void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState){
+    for (int i = 0; i < UserVec.size(); ++i) {
+       if (UserVec[i].getUsername() == userToEdit){
+           UserVec[i].setUsername(newUsername);
+           UserVec[i].setPassword(newPassword);
+           UserVec[i].setIsAdmin(newAdminState);
+       }
+    }
 
+}
+
+void saveUserInfo(){
+
+    std::ofstream usernameFile;
+    std::ofstream passwordFile;
+    std::ofstream adminFile;
+
+    for (int i = 0; i < UserVec.size(); ++i) {
+       usernameFile.open(UserVec[i].getUsername().toStdString(), std::ios::out | std::ios::ate | std::ios::app);
+       usernameFile.open(UserVec[i].getpassword().toStdString(), std::ios::out | std::ios::ate | std::ios::app);
+       usernameFile.open(UserVec[i].getIsAdmin().toStdString(), std::ios::out | std::ios::ate | std::ios::app);
+    }
 }
 
 

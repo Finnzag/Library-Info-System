@@ -16,7 +16,7 @@ public:
 
     QString getUsername();
     QString getpassword();
-    bool getIsAdmin();
+    QString getIsAdmin();
 
 private:
 
