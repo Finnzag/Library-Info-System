@@ -23,6 +23,10 @@ private:
 
 public:
     void setIsAdminUser(bool adminStatus);
+private slots:
+    void on_EditCatalogueButton_clicked();
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 };
 
 #endif // DASHBOARDWINDOW_H

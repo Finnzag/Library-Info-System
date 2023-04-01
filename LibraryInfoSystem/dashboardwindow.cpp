@@ -27,3 +27,21 @@ DashboardWindow::~DashboardWindow()
 void DashboardWindow::setIsAdminUser(bool adminStatus){
     isAdminUser = adminStatus;
 }
+
+void DashboardWindow::on_EditCatalogueButton_clicked()
+{
+
+}
+
+
+void DashboardWindow::on_pushButton_clicked()
+{
+
+}
+
+
+void DashboardWindow::on_pushButton_2_clicked()
+{
+
+}
+
