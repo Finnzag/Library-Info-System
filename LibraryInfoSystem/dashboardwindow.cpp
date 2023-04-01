@@ -6,15 +6,12 @@
 #include <fstream>
 
 // Function delcaration
-//void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
+void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
 void loadUserInfo();
 
 // Variables
 QString userToEdit;
-// create a username and password vector
-//std::vector<QString> UNVec;
-//std::vector<QString> PWVec;
-//std::vector<int> ASVec;
+// create a vector of users
 std::vector<User> UserVec;
 
 
@@ -114,7 +111,19 @@ void loadUserInfo(){
     }
 }
 
-//void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState){
-//
-//}
+void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState){
+
+}
+
+
+void DashboardWindow::on_AddButton_clicked()
+{
+
+}
+
+
+void DashboardWindow::on_RemoveButton_clicked()
+{
+
+}
 
