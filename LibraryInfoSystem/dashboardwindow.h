@@ -30,6 +30,7 @@ private slots:
     void on_EditButton_clicked();
     void on_AddButton_clicked();
     void on_RemoveButton_clicked();
+    void on_exitButton_clicked();
 };
 
 #endif // DASHBOARDWINDOW_H

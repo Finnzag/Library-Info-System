@@ -21,6 +21,7 @@ DashboardWindow::DashboardWindow(bool adminStatus, QWidget *parent) :
     ui(new Ui::DashboardWindow),
     isAdminUser(adminStatus)
 {
+    loadUserInfo();
     ui->setupUi(this);
 
     if (isAdminUser){
@@ -34,7 +35,7 @@ DashboardWindow::DashboardWindow(bool adminStatus, QWidget *parent) :
     ui->userToEditBox->hide();
     ui->editUserBox->hide();
 
-    loadUserInfo();
+
 }
 
 DashboardWindow::~DashboardWindow()
@@ -67,9 +68,7 @@ void DashboardWindow::on_EditButton_clicked()
             ui->editUserBox->show();
         }
         else{
-            QMessageBox::warning(this, "Incorrect User", "Please enter an existing username");
-            on_EditAccountButton_clicked();
-            break;
+            //QMessageBox::warning(this, "Incorrect User", "Please enter an existing username");
         }
     }
 
@@ -80,7 +79,11 @@ void DashboardWindow::on_EditButton_clicked()
 
 void DashboardWindow::on_saveDetailsButton_clicked()
 {
-    editUserDetails(userToEdit, ui->newUsernameEdit->text(), ui->newPasswordEdit->text(), ui->adminCheckBox->isChecked());
+    QString newUN = ui->newUsernameEdit->text();
+    QString newPW = ui->newPasswordEdit->text();
+    bool newAS = ui->adminCheckBox->isChecked();
+    qDebug() << newUN << " " << newPW << " " << newAS << userToEdit;
+    editUserDetails(userToEdit, newUN, newPW, newAS);
     ui->newUsernameEdit->clear();
     ui->newPasswordEdit->clear();
     ui->editUserBox->hide();
@@ -139,27 +142,27 @@ void saveUserInfo(){
     std::ofstream passwordFile;
     std::ofstream adminFile;
 
-    for (int i = 0; i < UserVec.size(); ++i) {
+    for (int i = 0; i < UserVec.size(); i++) {
         if (i > 0){
             usernameFile.open("username.txt", std::ios::out | std::ios::ate | std::ios::app);
-            usernameFile.open("password.txt", std::ios::out | std::ios::ate | std::ios::app);
-            usernameFile.open("adminstate.txt", std::ios::out | std::ios::ate | std::ios::app);
+            passwordFile.open("password.txt", std::ios::out | std::ios::ate | std::ios::app);
+            adminFile.open("adminstate.txt", std::ios::out | std::ios::ate | std::ios::app);
         }
         else{
             usernameFile.open("username.txt", std::ios::trunc | std::ios::out | std::ios::ate);
-            usernameFile.open("password.txt", std::ios::trunc | std::ios::out | std::ios::ate);
-            usernameFile.open("adminstate.txt", std::ios::trunc  | std::ios::out | std::ios::ate);
+            passwordFile.open("password.txt", std::ios::trunc | std::ios::out | std::ios::ate);
+            adminFile.open("adminstate.txt", std::ios::trunc  | std::ios::out | std::ios::ate);
         }
 
         usernameFile << std::endl << UserVec[i].getUsername().toStdString();
         passwordFile << std::endl << UserVec[i].getpassword().toStdString();
         adminFile << std::endl << UserVec[i].getIsAdmin().toStdString();
 
-    }
+        usernameFile.close();
+        passwordFile.close();
+        adminFile.close();
 
-    usernameFile.close();
-    passwordFile.close();
-    adminFile.close();
+    }
 }
 
 
@@ -172,5 +175,11 @@ void DashboardWindow::on_AddButton_clicked()
 void DashboardWindow::on_RemoveButton_clicked()
 {
 
+}
+
+
+void DashboardWindow::on_exitButton_clicked()
+{
+    DashboardWindow::close();
 }
 
