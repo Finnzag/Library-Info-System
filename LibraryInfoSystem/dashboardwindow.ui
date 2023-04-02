@@ -275,6 +275,19 @@
      <string>Exit</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="CurrentBooksButton">
+    <property name="geometry">
+     <rect>
+      <x>834</x>
+      <y>30</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Books</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

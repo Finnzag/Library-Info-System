@@ -183,3 +183,9 @@ void DashboardWindow::on_exitButton_clicked()
     DashboardWindow::close();
 }
 
+
+void DashboardWindow::on_CurrentBooksButton_clicked()
+{
+
+}
+
