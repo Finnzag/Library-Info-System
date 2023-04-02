@@ -61,7 +61,7 @@ void LoginWindow::on_exitButton_clicked()
 
 void LoginWindow::on_submitButton_clicked()
 {
-    bool bDoOnce = true;
+    bool bDoOnce = false;
     //ui->loginDetailsBox->setVisible(false);
     uName = ui->UNInput->text();
     ui->UNInput->clear();
@@ -71,13 +71,13 @@ void LoginWindow::on_submitButton_clicked()
     // Compare enetered text to PW and UN saves by programme
     for (int i = 0;  i < UNVec.size(); i++) {
 
-        if (uName == UNVec[i]){
-            if (uPassword == PWVec[i]){
+        if (UNVec[i] == uName){
+            if (PWVec[i] == uPassword){
                 QMessageBox::information(this, "Login", "Username and Password are correct");
                 hide();
                 LoginWindow::close();
                 // hide login window and create the dashboard window
-                dashboardWindow = new DashboardWindow(ASVec[i], this);
+                dashboardWindow = new DashboardWindow(UNVec[i], ASVec[i], this);
                 dashboardWindow->show();
                 bDoOnce = true;
             }

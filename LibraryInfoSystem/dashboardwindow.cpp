@@ -1,6 +1,7 @@
 #include "dashboardwindow.h"
 #include "ui_dashboardwindow.h"
 #include "user.h"
+#include "book1.h"
 #include <QDebug>
 #include <QMessageBox>
 #include <fstream>
@@ -17,13 +18,15 @@ QString userToEdit;
 std::vector<User> UserVec;
 
 
-DashboardWindow::DashboardWindow(bool adminStatus, QWidget *parent) :
+DashboardWindow::DashboardWindow(QString accountName, bool adminStatus, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::DashboardWindow),
     isAdminUser(adminStatus)
 {
     loadUserInfo();
     ui->setupUi(this);
+
+    ui->usernameLable->setText(accountName);
 
     if (isAdminUser){
         ui->EditAccountButton->show();
@@ -221,4 +224,3 @@ void DashboardWindow::on_createNewButton_clicked()
 
     ui->newUserWidget->hide();
 }
-

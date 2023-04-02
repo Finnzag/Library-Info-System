@@ -12,7 +12,7 @@ class DashboardWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit DashboardWindow(bool adminStatus, QWidget *parent = nullptr);
+    explicit DashboardWindow(QString accountName, bool adminStatus, QWidget *parent = nullptr);
     ~DashboardWindow();
 
 private:
