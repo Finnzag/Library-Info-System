@@ -10,23 +10,36 @@ CONFIG += c++17
 
 SOURCES += \
     book.cpp \
+    book1.cpp \
+    checkout.cpp \
     dashboardwindow.cpp \
     main.cpp \
     loginwindow.cpp \
+    returns.cpp \
     user.cpp
 
 HEADERS += \
     book.h \
+    book1.h \
+    checkout.h \
     dashboardwindow.h \
     loginwindow.h \
+    returns.h \
     user.h
 
 FORMS += \
+    book.ui \
+    book1.ui \
+    checkout.ui \
     dashboardwindow.ui \
     loginwindow.ui \
-    mainmenuwindow.ui
+    mainmenuwindow.ui \
+    returns.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    images.qrc
