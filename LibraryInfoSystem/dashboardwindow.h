@@ -32,6 +32,8 @@ private slots:
     void on_RemoveButton_clicked();
     void on_exitButton_clicked();
     void on_CurrentBooksButton_clicked();
+    void on_newUserMenuButton_clicked();
+    void on_createNewButton_clicked();
 };
 
 #endif // DASHBOARDWINDOW_H

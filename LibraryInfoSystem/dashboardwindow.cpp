@@ -9,6 +9,7 @@
 void editUserDetails(QString userToEdit, QString newUsername, QString newPassword, bool newAdminState);
 void loadUserInfo();
 void saveUserInfo();
+void createNewUser(QString username, QString password, bool isAdmin);
 
 // Variables
 QString userToEdit;
@@ -27,13 +28,16 @@ DashboardWindow::DashboardWindow(bool adminStatus, QWidget *parent) :
     if (isAdminUser){
         ui->EditAccountButton->show();
         ui->EditCatalogueButton->show();
+        ui->newUserMenuButton->show();
     }else{
         ui->EditAccountButton->hide();
         ui->EditCatalogueButton->hide();
+        ui->newUserMenuButton->hide();
     }
 
     ui->userToEditBox->hide();
     ui->editUserBox->hide();
+    ui->newUserWidget->hide();
 
 
 }
@@ -165,6 +169,14 @@ void saveUserInfo(){
     }
 }
 
+void createNewUser(QString username, QString password, bool isAdmin){
+    User U(username, password, isAdmin);
+
+    UserVec.push_back(U);
+
+    saveUserInfo();
+}
+
 
 void DashboardWindow::on_AddButton_clicked()
 {
@@ -187,5 +199,26 @@ void DashboardWindow::on_exitButton_clicked()
 void DashboardWindow::on_CurrentBooksButton_clicked()
 {
 
+}
+
+
+void DashboardWindow::on_newUserMenuButton_clicked()
+{
+    ui->newUserWidget->show();
+}
+
+
+void DashboardWindow::on_createNewButton_clicked()
+{
+    QString usernmaeInput = ui->usernameNew->text();
+    QString passwordInput = ui->passwordNew->text();
+    bool adminInput = ui->adminCheckBoxNew->isChecked();
+
+    createNewUser(usernmaeInput, passwordInput, adminInput);
+
+    ui->usernameNew->clear();
+    ui->passwordNew->clear();
+
+    ui->newUserWidget->hide();
 }
 
