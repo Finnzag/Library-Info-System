@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/9780261103252-4.jpg</file>
+        <file>Images/9781529046137-1.jpg</file>
+        <file>Images/original_y648.jpg</file>
+        <file>Images/the-war-of-the-worlds-55.jpg</file>
+        <file>Images/yin-adapted-2-scaled.jpg</file>
+        <file>Images/Harry_Potter_and_the_Philosopher's_Stone_Book_Cover.jpg</file>
+    </qresource>
+</RCC>
