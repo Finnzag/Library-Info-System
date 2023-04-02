@@ -16,13 +16,17 @@ public:
 
     QString getUsername();
     QString getpassword();
-    bool getIsAdmin();
+    QString getIsAdmin();
+
+    std::vector<int> booksCheckedOut;
 
 private:
 
     QString username;
     QString password;
     bool isAdmin;
+
+
 };
 
 #endif // USER_H

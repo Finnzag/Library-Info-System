@@ -11,8 +11,20 @@ public:
 private:
     std::string Name;
     int ID;
-    std::string Genere;
+    std::string Genre;
     bool isAvaiable;
+
+public:
+
+    void setName();
+    void setGenre();
+    void setIsAvailable();
+
+    std::string getName();
+    std::string getID();
+    std::string getGenre();
+    std::string getIsAvailable();
+
 
 };
 

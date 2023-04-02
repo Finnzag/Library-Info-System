@@ -21,7 +21,7 @@ LoginWindow::LoginWindow(QWidget *parent)
     // Temp variables for user data
     std::string readInUsername;
     std::string readInpassword;
-    bool readInAdminState;
+    std::string readInAdminState;
 
 
     // load credentials from text file
@@ -36,7 +36,14 @@ LoginWindow::LoginWindow(QWidget *parent)
             PasswordFile >> readInpassword;
             PWVec.push_back(QString::fromStdString(readInpassword));
             AdminStateFile >> readInAdminState;
-            ASVec.push_back(readInAdminState);
+            if (readInAdminState == "true"){
+
+                ASVec.push_back(1);
+            }
+            else{
+                ASVec.push_back(0);
+            }
+
         }
     }
 }
@@ -68,6 +75,7 @@ void LoginWindow::on_submitButton_clicked()
             if (uPassword == PWVec[i]){
                 QMessageBox::information(this, "Login", "Username and Password are correct");
                 hide();
+                LoginWindow::close();
                 // hide login window and create the dashboard window
                 dashboardWindow = new DashboardWindow(ASVec[i], this);
                 dashboardWindow->show();

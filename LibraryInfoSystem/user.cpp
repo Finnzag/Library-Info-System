@@ -31,7 +31,14 @@ QString User::getpassword()
     return password;
 }
 
-bool User::getIsAdmin()
+QString User::getIsAdmin()
 {
-    return isAdmin;
+    switch (isAdmin) {
+    case 0:
+        return "false";
+        break;
+    case 1:
+        return "true";
+        break;
+    }
 }
