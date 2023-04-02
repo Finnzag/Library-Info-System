@@ -156,6 +156,33 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <pixmap resource="images.qrc">:/Images/9780261103252-4.jpg</pixmap>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1071</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 222);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>pushButton_5</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_7</zorder>
+  <zorder>pushButton_6</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>textEdit</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources>
   <include location="images.qrc"/>
